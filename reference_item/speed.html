@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Speed Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .speedometer {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Vehicle Speed Detection</h1>
+    <div id="speed" class="speedometer">Getting speed...</div>
+
+    <script>
+        function getSpeed() {
+            if (navigator.geolocation) {
+                navigator.geolocation.watchPosition((position) => {
+                    const speed = position.coords.speed; // speed in meters per second
+                    if (speed === null) {
+                        document.getElementById('speed').innerHTML = "Speed: Not available";
+                    } else {
+                        const speedKmh = (speed * 3.6).toFixed(2); // convert to km/h
+                        document.getElementById('speed').innerHTML = `Speed: ${speedKmh} km/h`;
+                    }
+                }, showError, {
+                    enableHighAccuracy: true, // request high accuracy
+                    maximumAge: 0, // prevent caching
+                    timeout: 5000 // timeout in milliseconds
+                });
+            } else {
+                document.getElementById('speed').innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById('speed').innerHTML = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById('speed').innerHTML = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById('speed').innerHTML = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById('speed').innerHTML = "An unknown error occurred.";
+                    break;
+            }
+        }
+
+        // Call getSpeed on page load
+        getSpeed();
+    </script>
+</body>
+</html>

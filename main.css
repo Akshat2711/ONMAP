@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 16px;
+
+            background: rgb(0,0,5);
+background: -moz-linear-gradient(90deg, rgba(0,0,5,1) 0%, rgba(38,106,207,1) 49%);
+background: -webkit-linear-gradient(90deg, rgba(0,0,5,1) 0%, rgba(38,106,207,1) 49%);
+background: linear-gradient(90deg, rgba(0,0,5,1) 0%, rgba(38,106,207,1) 49%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000005",endColorstr="#266acf",GradientType=1);
+        }
+        .containermanin {
+            max-width: 640px;
+            margin: auto;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+            padding: 16px;
+            margin-bottom: 24px;
+            color: #e2e8f0;
+            background-color: #000000;
+        }
+        .h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            
+        }
+        
+        
+        .battery-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .battery-info i {
+            color: #2245c5;
+            font-size: 24px;
+            margin-right: 8px;
+        }
+        .battery-info .text {
+            font-size: 18px;
+        }
+        .battery-bar {
+            width: 100%;
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            height: 10px;
+            margin-top: 16px;
+        }
+        .battery-bar .fill {
+            background-color: #3b82f6;
+            height: 10px;
+            border-radius: 9999px;
+            width: 100%;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            
+        }
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+        .container {
+            max-width: auto;
+            margin: 0 auto;
+            padding: 4px;
+        }
+     
+        .menu {
+            background-color: #000000;
+            color: #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            overflow-y: auto;
+            height: auto;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        .menu-item:not(:last-child) {
+            margin-bottom: 16px;
+        }
+        .menu-item:hover {
+            background-color: #edf2f7;
+        }
+        .menu-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .menu-item-info {
+            margin-left: 16px;
+            flex-grow: 1;
+        }
+        .menu-item-info h2 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .menu-item-info p {
+            font-size: 14px;
+            color: #718096;
+        }
+        .menu-item-speed {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4a5568;
+            background-color: #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .containertop{
+            
+            display: flex;
+        }
+      button{
+        border-radius: 7px;
+        border: none;
+        box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+        font-size: 25px;
+        
+         background-color: #000000;
+         color: #e2e8f0;
+        padding: 12px;
+        margin-right: 7px;
+      }
+      button:hover{
+        color:#000000;
+        background-color: #e2e8f0;
+        
+      }
+      h2{
+        color: #e2e8f0;
+      }
+

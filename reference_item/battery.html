@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Battery Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .battery-status {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Device Battery Information</h1>
+    <button onclick="getBatteryInfo()">Get Battery Status</button>
+    <div class="battery-status">
+        <p id="charging"></p>
+        <p id="level"></p>
+        <p id="chargingTime"></p>
+        <p id="dischargingTime"></p>
+    </div>
+
+    <script>
+        function getBatteryInfo() {
+            if (navigator.getBattery) {
+                navigator.getBattery().then(function(battery) {
+                    updateBatteryStatus(battery);
+                    
+                    // Update the battery status whenever it changes
+                    battery.addEventListener('chargingchange', function() {
+                        updateBatteryStatus(battery);
+                    });
+                    battery.addEventListener('levelchange', function() {
+                        updateBatteryStatus(battery);
+                    });
+                    battery.addEventListener('chargingtimechange', function() {
+                        updateBatteryStatus(battery);
+                    });
+                    battery.addEventListener('dischargingtimechange', function() {
+                        updateBatteryStatus(battery);
+                    });
+                });
+            } else {
+                document.querySelector('.battery-status').innerHTML = "Battery Status API is not supported by your browser.";
+            }
+        }
+
+        function updateBatteryStatus(battery) {
+            document.getElementById('charging').innerHTML = "Charging: " + (battery.charging ? "Yes" : "No");
+            document.getElementById('level').innerHTML = "Battery Level: " + Math.round(battery.level * 100) + "%";
+            document.getElementById('chargingTime').innerHTML = "Charging Time: " + (battery.chargingTime === Infinity ? "N/A" : battery.chargingTime + " seconds");
+            document.getElementById('dischargingTime').innerHTML = "Discharging Time: " + (battery.dischargingTime === Infinity ? "N/A" : battery.dischargingTime + " seconds");
+        }
+    </script>
+</body>
+</html>

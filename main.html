@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location and Status App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link rel="stylesheet" href="main.css"></link>
+</head>
+<body>
+    <h2>Location</h2>
+    <div class="container1">
+        <div id="map"></div>
+    </div>
+
+
+    <br>
+    <br>
+
+
+    <div class="container">
+        <div class="menu">
+            <p id="name_speed"></p>
+        </div>
+    </div>
+
+
+
+<br>
+<br>
+    <div class="containermain">
+        <!-- Map Section -->
+        <!-- Chat Section -->
+        
+        <!-- Device Battery Information -->
+        <div class="card">
+            <h2>Device Battery</h2>
+            <div class="battery-info">
+                <div>
+                    <span class="text" id="level"></span>
+                </div>
+                <span class="text"></span>
+            </div>
+            <div class="battery-bar">
+                <div class="fill"></div>
+            </div>
+        <p id="add_battery"></p>
+        
+        </div>
+        
+        
+    </div>
+
+    <div class="containertop">
+        <button onclick="add_member()"><b>Edit Group✎</b></button>
+        <button onclick="window.location.href='chat.html'"><b>Chat💬</b></button>
+    </div>
+</body>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="main.js" type="module"></script>
+</html>

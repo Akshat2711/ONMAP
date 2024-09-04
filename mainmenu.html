@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+   <link rel="stylesheet" href="mainmenu.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Select a Group</h1>
+        <div class="space-y-4">
+           <p id="display"></p>
+           <button onclick="window.location.href=`nearbychat.html`" class="group-link" id="nearby-link">
+            <h5>Nearby People</h5>
+            <p>all within radius of 10 km added automatically for chatting in group</p>
+        </button>
+        </div>
+        <div class="form">
+            <input id="add_field" type="text" placeholder="Enter group name" /> <!-- Added ID -->
+            <button id="create_grp_btn">Create Group</button>
+        </div>
+    </div>
+<script src="mainmenu.js" type="module"></script>
+</body>
+</html>
